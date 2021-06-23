@@ -131,6 +131,7 @@ int main(int argc, char *argv[])
     window->setAttribute(Qt::WA_TranslucentBackground);
     window->setStyleSheet("background: transparent;");
     window->setWindowFlags(Qt::FramelessWindowHint);
+
     window->showMaximized();
 #else
     window->resize(1280, 720);
@@ -141,9 +142,6 @@ int main(int argc, char *argv[])
         window->webView()->setCurrentChannel(onid, tsid, sid);
     window->webView()->setLanguage(QStringLiteral("DEU")); // TODO:
     window->webView()->setScriptDebugging(scriptDebugging ? QStringLiteral("true") : QStringLiteral("false"));
-    window->webView()->setAttribute(Qt::WA_TranslucentBackground);
-    window->webView()->setStyleSheet("background:transparent");
-    window->webView()->setWindowFlags(Qt::FramelessWindowHint);
     window->webView()->setUrl(url);
 
     window->show();
