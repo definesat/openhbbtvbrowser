@@ -142,10 +142,10 @@ int main(int argc, char *argv[])
         window->webView()->setCurrentChannel(onid, tsid, sid);
     window->webView()->setLanguage(QStringLiteral("DEU")); // TODO:
     window->webView()->setScriptDebugging(scriptDebugging ? QStringLiteral("true") : QStringLiteral("false"));
-    window->webView()->setUrl(url);
     window->webView()->setAttribute(Qt::WA_TranslucentBackground);
     window->webView()->setStyleSheet("background:transparent");
     window->webView()->page()->setBackgroundColor(Qt::transparent);
+    window->webView()->setUrl(url);
 
     window->show();
 
