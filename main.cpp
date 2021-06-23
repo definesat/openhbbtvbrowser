@@ -14,7 +14,7 @@
 #include <sys/mount.h>
 #include <errno.h>
 #include <stddef.h>
-
+#error "cross compile"
 int mkdir_mount_devshm(void)
 {
     const char mountpoint[] = "/dev/shm";
