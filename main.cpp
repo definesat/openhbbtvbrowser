@@ -128,11 +128,10 @@ int main(int argc, char *argv[])
 
     auto window = new BrowserWindow();
 #if defined(EMBEDDED_BUILD)
-    window->showFullScreen();
-    window->setWindowFlags(Qt::FramelessWindowHint);
     window->setAttribute(Qt::WA_TranslucentBackground);
     window->setStyleSheet("background: transparent;");
-    window->setAutoFillBackground(true);
+    window->setWindowFlags(Qt::FramelessWindowHint);
+    window->showMaximized();
 #else
     window->resize(1280, 720);
 #endif
@@ -144,7 +143,7 @@ int main(int argc, char *argv[])
     window->webView()->setScriptDebugging(scriptDebugging ? QStringLiteral("true") : QStringLiteral("false"));
     window->webView()->setAttribute(Qt::WA_TranslucentBackground);
     window->webView()->setStyleSheet("background:transparent");
-    window->webView()->page()->setBackgroundColor(Qt::transparent);
+    window->webView()->setWindowFlags(Qt::FramelessWindowHint);
     window->webView()->setUrl(url);
 
     window->show();
