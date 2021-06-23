@@ -132,6 +132,7 @@ int main(int argc, char *argv[])
     window->setWindowFlags(Qt::FramelessWindowHint);
     window->setAttribute(Qt::WA_TranslucentBackground);
     window->setStyleSheet("background: transparent;");
+    window->setAutoFillBackground(true);
 #else
     window->resize(1280, 720);
 #endif
