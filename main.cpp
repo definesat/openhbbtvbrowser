@@ -14,7 +14,7 @@
 #include <sys/mount.h>
 #include <errno.h>
 #include <stddef.h>
-#error "cross compile"
+
 int mkdir_mount_devshm(void)
 {
     const char mountpoint[] = "/dev/shm";
@@ -142,6 +142,10 @@ int main(int argc, char *argv[])
     window->webView()->setLanguage(QStringLiteral("DEU")); // TODO:
     window->webView()->setScriptDebugging(scriptDebugging ? QStringLiteral("true") : QStringLiteral("false"));
     window->webView()->setUrl(url);
+    window->webView()->setAttribute(Qt::WA_TranslucentBackground);
+    window->webView()->setStyleSheet("background:transparent");
+    window->webView()->page()->setBackgroundColor(Qt::transparent);
+
     window->show();
 
 #if defined(EMBEDDED_BUILD)
